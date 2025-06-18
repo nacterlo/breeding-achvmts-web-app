@@ -1,6 +1,6 @@
 'use client'
 
-import { redirect, useRouter } from "next/navigation"
+import { useRouter } from "next/navigation"
 import { AchivmentsSmall } from "../model/types"
 
 interface AchievmentsListProps {
@@ -9,7 +9,7 @@ interface AchievmentsListProps {
 export default function AchievmentsList({ achievments }: AchievmentsListProps) {
     const router = useRouter();
     const handleClick = (id: number) => {
-        router.push(`/achievments/${id}`)
+        router.push(`/${id}`)
     }
 
     return (

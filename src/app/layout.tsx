@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Header from "@/shared/ui/header";
+import { ThemeProvider } from "@/shared/ui/theme-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,6 +16,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Банк данных селекционных достижений",
   description: "Банк данных селекционных достижений Республики Беларусь",
+  keywords: "Банк данных, селекционные достижения, ГИВЦ, Минсельхозпрода",
 };
 
 export default function RootLayout({
@@ -24,19 +25,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ru">
+    <html lang="ru" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="min-h-screen flex flex-col bg-gradient-to-br from-emerald-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800 transition-colors">
-          <Header />
-          <main className="grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
-            {children}
-          </main>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
           <footer className="text-sm row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
             © УП ГИВЦ Минсельхозпрода {new Date().getFullYear()}
           </footer>
-        </div>
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -1,4 +1,4 @@
-import { AchivmentsSmall, ResponseAchivmentsList } from "../model/types";
+import { ResponseAchivmentsList } from "../model/types";
 
 
 
