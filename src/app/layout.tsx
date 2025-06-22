@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/shared/ui/theme-provider";
+import { ModeToggle } from "@/shared/ui/theme-toogle";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,10 +36,34 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
-          <footer className="text-sm row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-            © УП ГИВЦ Минсельхозпрода {new Date().getFullYear()}
+          <div className="min-h-screen flex flex-col mx-auto px-4 py-8 max-w-7xl">
+            <header className="flex justify-between items-center mb-8">
+              <h1 className="text-3xl font-bold">Селекционные достижения</h1>
+              <ModeToggle />
+            </header>
+            <main className="flex-1">
+              {children}
+            </main>
+            <footer className="mt-8">
+            <p className="text-md text-center text-gray-600 dark:text-gray-400">
+              &copy; {new Date().getFullYear()} УП ГИВЦ &quot;Минсельхозпрода&quot;
+            </p>
           </footer>
+          </div>
+          {/* <main className="min-h-screen  bg-white dark:bg-[#121212] text-gray-900 dark:text-white">
+            <div className="min-h-screen flex flex-col mx-auto px-4 py-8 max-w-7xl">
+              <div className="flex justify-between items-center mb-8">
+                <h1 className="text-3xl font-bold">Селекционные достижения</h1>
+                <ModeToggle />
+              </div>
+              {children}
+            </div>
+          </main>
+          <footer className="mt-8">
+            <p className="text-md text-center text-gray-600 dark:text-gray-400">
+              &copy; {new Date().getFullYear()} УП ГИВЦ &quot;Минсельхозпрода&quot;
+            </p>
+          </footer> */}
         </ThemeProvider>
       </body>
     </html>
