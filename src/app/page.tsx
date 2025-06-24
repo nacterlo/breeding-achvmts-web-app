@@ -3,7 +3,7 @@ import AchievmentsList from "@/features/achivments-list/ui/achievments-list";
 
 
 export default async function AchievmentsListPage() {
-  const achievementsData = await getAchivmentsList(0, 12)
+  const achievementsData = await getAchivmentsList(0, 30)
 
   return (
     <AchievmentsList achievments={achievementsData.data} />

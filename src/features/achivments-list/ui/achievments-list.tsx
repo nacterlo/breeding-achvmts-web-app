@@ -8,16 +8,20 @@ interface AchievmentsListProps {
 }
 export default function AchievmentsList({ achievments }: AchievmentsListProps) {
 
-
     return (
-        <div className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
-                {achievments.map((achievment) => (
-                    <Link href={`/${achievment.id}`} key={achievment.id}>
-                        <AchievmentCard key={achievment.id} achievment={achievment} />
-                    </Link>
-                ))}
-            </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-3 gap-4 md:gap-6">
+            {achievments.map((achievment) => (
+                <Link
+                    href={`/${achievment.id}`}
+                    key={achievment.id}
+                    className="block transition-transform duration-300 hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
+                    aria-label={`Достижение: ${achievment.name}`}
+                >
+                    <AchievmentCard
+                        achievment={achievment}
+                    />
+                </Link>
+            ))}
         </div>
     )
 }
