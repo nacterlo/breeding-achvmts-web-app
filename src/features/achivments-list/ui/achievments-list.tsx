@@ -14,7 +14,7 @@ export default function AchievmentsList({ achievments }: AchievmentsListProps) {
                 <Link
                     href={`/${achievment.id}`}
                     key={achievment.id}
-                    className="block transition-transform duration-300 hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
+                    className="block transition-transform duration-100  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
                     aria-label={`Достижение: ${achievment.name}`}
                 >
                     <AchievmentCard

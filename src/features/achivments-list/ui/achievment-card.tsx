@@ -11,7 +11,7 @@ interface AchievmentCardProps {
 export function AchievmentCard({ achievment }: AchievmentCardProps) {
     return (
         <Card
-            className="group relative flex h-full w-full min-w-[280px] max-w-[400px] flex-col border border-gray-200 bg-white p-4 transition-all duration-600 hover:-translate-y-1 hover:shadow-lg dark:border-[#333] dark:bg-[#121212] dark:hover:bg-[#1e1e1e] sm:min-w-[320px] md:p-5"
+            className="group relative flex h-full w-full min-w-[280px] max-w-[400px] flex-col border border-gray-200 bg-white p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-[#333] dark:bg-[#121212] dark:hover:bg-[#1e1e1e] sm:min-w-[320px] md:p-5"
         >
             {/* Бейдж с иконкой */}
             <div className="absolute -left-3 -top-3">
@@ -46,7 +46,7 @@ export function AchievmentCard({ achievment }: AchievmentCardProps) {
                             <PawPrintIcon className="mr-2 mt-0.5 h-5 w-5 flex-shrink-0 text-sky-400 dark:text-sky-500" />
                             <span className="break-words text-xs self-center">
                                 <p className="font-semibold">
-                                    Вид животного: {achievment.breed.name.toLocaleLowerCase()}
+                                     {achievment.breed.name}
                                 </p>
                             </span>
                         </div>
