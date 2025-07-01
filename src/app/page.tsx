@@ -7,7 +7,8 @@ import { Suspense } from "react";
 
 
 export default async function AchievmentsListPage() {
-  const achievementsData = await getAchivmentsList(0, 30)
+  const achievementsData = await getAchivmentsList(0, 100)
+
 
   return (
     <Suspense fallback={<LoadingSkeleton />}>
@@ -22,11 +23,11 @@ function LoadingSkeleton() {
       {Array.from({ length: 9 }).map((_, index) => (
         <div
           key={index}
-          className="relative p-[2px] rounded-lg bg-gradient-to-r from-cyan-500 via-sky-500 via-blue-500 to-indigo-500 dark:from-violet-500 dark:via-purple-500 dark:via-fuchsia-500 dark:via-pink-500 dark:to-rose-500 animate-pulse"
+          className="relative p-[2px] rounded-lg bg-gradient-to-r from-cyan-500 via-sky-500 to-indigo-500 dark:from-violet-500 dark:via-purple-500 dark:via-fuchsia-500 dark:via-pink-500 dark:to-rose-500 animate-pulse"
         >
           {/* Анимированный Badge для skeleton */}
           <div className="absolute -top-2 -left-2 z-10">
-            <Badge className="bg-gradient-to-r from-cyan-500 via-sky-500 via-blue-500 to-indigo-500 dark:from-violet-500 dark:via-purple-500 dark:via-fuchsia-500 dark:via-pink-500 dark:to-rose-500 text-white border-0 shadow-lg animate-pulse">
+            <Badge className="bg-gradient-to-r from-cyan-500 via-sky-500 to-indigo-500 dark:from-violet-500 dark:via-purple-500 dark:via-fuchsia-500 dark:via-pink-500 dark:to-rose-500 text-white border-0 shadow-lg animate-pulse">
               <Award
                 className="h-4 w-4 text-amber-400 dark:text-yellow-300 drop-shadow-sm animate-bounce"
                 style={{

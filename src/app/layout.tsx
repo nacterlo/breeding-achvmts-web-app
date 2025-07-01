@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Банк данных селекционных достижений",
   description: "Банк данных селекционных достижений Республики Беларусь",
-  keywords: "Банк данных, селекционные достижения,, ГИВЦ, достижения Республики Беларусь, ",
+  keywords: "Банк данных, селекционные достижения, ГИВЦ, достижения Республики Беларусь, ",
 };
 
 export default function RootLayout({
