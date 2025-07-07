@@ -1,6 +1,6 @@
 
 import { AchievmentCard } from "@/features/achivments-list/ui/achievment-card"
-import { AchivmentsSmall, ResponseAchivmentsList } from "../model/types"
+import { ResponseAchivmentsList } from "../model/types"
 import Link from "next/link"
 
 interface AchievmentsListProps {

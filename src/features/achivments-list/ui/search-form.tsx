@@ -1,5 +1,4 @@
 import { Input } from "@/shared/ui/kit/input"
-import { Label } from "@/shared/ui/kit/label"
 import { Search } from "lucide-react"
 
 export function SearchForm({ ...props }: React.ComponentProps<"form">) {
