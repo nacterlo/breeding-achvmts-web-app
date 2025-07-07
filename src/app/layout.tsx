@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/shared/ui/theme-provider";
 import { ModeToggle } from "@/shared/ui/theme-toogle";
+import Header from "@/shared/ui/header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,7 +18,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Банк данных селекционных достижений",
   description: "Банк данных селекционных достижений Республики Беларусь",
-  keywords: "Банк данных, селекционные достижения, ГИВЦ, достижения Республики Беларусь, ",
+  keywords: "Банк данных, селекционные достижения, ГИВЦ, достижения Республики Беларусь",
 };
 
 export default function RootLayout({
@@ -36,11 +37,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="min-h-screen flex flex-col mx-auto px-4 py-8 max-w-7xl bg-white dark:bg-[#121212] text-gray-900 dark:text-white">
-            <header className="flex justify-between items-center mb-8">
-              <h1 className="text-lg md:text-3xl font-bold">Реестр селекционных достижений Республики Беларусь</h1>
-              <ModeToggle />
-            </header>
+          {/* <div className="min-h-screen flex flex-col mx-auto px-4 py-8 max-w-7xl "> */}
+          <div className="min-h-screen flex flex-col mx-auto px-4 py-8 ">
+            <Header />
             <main className="flex-1 flex items-center">
               {children}
             </main>
